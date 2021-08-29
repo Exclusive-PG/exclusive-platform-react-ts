@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import  './../../styles/main_header.scss';
 import {Person , Mic} from '@material-ui/icons';
 import {GoogleLogin, GoogleLoginResponse} from 'react-google-login';
-import { ClientID } from './../../api/api';
+import { ClientID } from '../../api/api';
 import { PropsHeader } from './headerC';
 import { IGoogleLoginData } from '../../Redux/interfaces';
 import { Avatar } from '@material-ui/core';
@@ -15,9 +15,9 @@ import { STATIC_USERNAME_GOOGLE } from '../../Redux/reducerGoogleLogin';
 
 
 
-const Header:React.FC<PropsHeader> = ({googleLogin,GoogleAC}) =>{
+const Header = ({googleLogin,GoogleAC}) =>{
     //hook get date //DATE
-    const [date , setDate] = useState<string>("00:00");
+    const [date , setDate] = useState("00:00");
 
 
       useEffect(()=>{
@@ -33,7 +33,7 @@ const Header:React.FC<PropsHeader> = ({googleLogin,GoogleAC}) =>{
 
 ///Google Login
 
-const responseGoogle =(response : GoogleLoginResponse) : void  =>{
+const responseGoogle =(response )   =>{
 
     console.log(response.getBasicProfile().getEmail());
     const {name , imageUrl} = response.profileObj;
@@ -55,7 +55,7 @@ useEffect(()=>{
          
     if(localStorage.getItem("SESSION_DATA")){
     
-        let data:IGoogleLoginData = JSON.parse(localStorage.getItem("SESSION_DATA")!);
+        let data = JSON.parse(localStorage.getItem("SESSION_DATA"));
         
         GoogleAC(data);
         
@@ -68,7 +68,7 @@ useEffect(()=>{
         <header className = "main__screen_header">
 
         <div className="left_block">
-    <>{googleLogin.userName === STATIC_USERNAME_GOOGLE && <GoogleLogin clientId = {ClientID} onSuccess= {responseGoogle} onFailure = {responseGoogle} /> }</>
+    {/* <>{googleLogin.userName === STATIC_USERNAME_GOOGLE && <GoogleLogin clientId = {ClientID} onSuccess= {responseGoogle} onFailure = {responseGoogle} /> }</> */}
         
         
         <div className="data-user">

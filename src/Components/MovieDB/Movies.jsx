@@ -21,21 +21,21 @@ import Viewfilm from './ViewFilm';
 const Movies = () => {
 
 
-const [movieList,setMovieList] = useState<IMovies[]>([]);
+const [movieList,setMovieList] = useState([]);
 
 // const [language,setLanguage ]  = useState<string>("ru");
 
-const [currentPage , setCurrentPage] = useState<number>(1);
+const [currentPage , setCurrentPage] = useState(1);
 
-const [totalPages , setTotalPages] = useState<number>(0);
+const [totalPages , setTotalPages] = useState(0);
 
-const [loading,setLoading] = useState<boolean>(false);
+const [loading,setLoading] = useState(false);
 
-const [viewFilm,setViewFilm] = useState<string>("");
+const [viewFilm,setViewFilm] = useState("");
 
-const [search,setSearchFilm] = useState<string>("");
+const [search,setSearchFilm] = useState("");
 
-let Pagination : Array<number>  = [];
+let Pagination   = [];
 
 
 
@@ -44,7 +44,7 @@ const getTopMovieList = () =>{
   axios.get(search === "" ? ` https://api.themoviedb.org/3/movie/popular?api_key=${API_MOVIES}&language=ru-RU&page=${currentPage} ` :
   `https://api.themoviedb.org/3/search/movie?api_key=${API_MOVIES}&language=ru-RU&query=${search}&page=${currentPage}&include_adult=false`
    )
-  .then((response:any)=>{
+  .then((response)=>{
       console.log(response);
       const {data} = response;
       
@@ -52,12 +52,12 @@ const getTopMovieList = () =>{
       setTotalPages(data.total_pages);
     setTimeout(() =>   setLoading(true), 1000);
   })
-  .catch((error:Error)=> console.log(error.message));
+  .catch((error)=> console.log(error.message));
 }
 
 
 
-const changePageHandler = (page:number) =>{
+const changePageHandler = (page) =>{
 if(page === currentPage) return
 
 else{
@@ -67,17 +67,17 @@ else{
 }
 ////context function
 
-const refreshSearchFilm = (movies:any)=> setMovieList(movies);
+const refreshSearchFilm = (movies)=> setMovieList(movies);
 
-const refreshTotalPages = (pages:number) =>  setTotalPages(pages);
+const refreshTotalPages = (pages) =>  setTotalPages(pages);
  
-const changeSearchSystem = (search:string) => setSearchFilm(search);
+const changeSearchSystem = (search) => setSearchFilm(search);
 
 
 
 
 /// create Pagination link
-const CreatorPagination = (countPage:number) : void =>{
+const CreatorPagination = (countPage)   =>{
   for(let i = 1 ; i <= countPage;i++){
      Pagination.push(i);
   }
@@ -113,7 +113,7 @@ CreatorPagination(totalPages)
 
                     <div className = {loading === true ?  s.listMovie : s.loading }>
                    { loading === true ? 
-                        movieList.map((item:IMovies,index:number) =>(
+                        movieList.map((item,index) =>(
                          
                           <div key ={item.id} className = {item.backdrop_path !== null ? `items item__${index}_` : "logo_not_found"} >      
                           {item.backdrop_path !==null   ?                                        
@@ -142,7 +142,7 @@ CreatorPagination(totalPages)
                             {console.log(Pagination)}
                                 {
                                   
-                                  Pagination.map((page:number)=>(
+                                  Pagination.map((page)=>(
                                         <span key= {page} >
                                           <Button onClick = {()=>{changePageHandler(page)}} variant={page === currentPage ? "contained" : "outlined"} color="secondary" style ={{padding : "0px",margin:"0 10px 10px 0"}}>{page}</Button>
 
@@ -158,7 +158,7 @@ CreatorPagination(totalPages)
         <main>
          
       {
-           movieList.map((item:IMovies,index:number) =>(
+           movieList.map((item,index) =>(
                    
             item.id.toString() === viewFilm &&  <section key = {item.id} className = "section_view__film">  <Viewfilm {...item}/> </section>
           
