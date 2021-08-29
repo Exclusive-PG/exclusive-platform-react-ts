@@ -1,4 +1,4 @@
-### `Exclusive Platform (React + Redux + Typescript)`
+# `Exclusive Platform (React + Redux + Typescript)`
 
 ## The platform consist of 6 apps:
 
@@ -9,9 +9,9 @@
 * Fresh News (works only on `localhost`)
 * Radio Station (works only on `localhost`)
 
-# The platform has a customization (background , theme ).
+### The platform has a customization (background , theme ).
 
-`If you want to see all the features of the project , just download it.`
+`If you want to see all the features of the project , just download it.`\
 [View part of the project online:](https://exclusive-platform-react-ts.vercel.app/#/home)
 ## Available Scripts
 
