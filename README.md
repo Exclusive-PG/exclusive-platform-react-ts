@@ -1,4 +1,4 @@
-# `Exclusive Platform (React + Redux + Typescript)`
+## `Exclusive Platform (React + Redux + Typescript)`
 
 ## The platform consist of 6 apps:
 
@@ -15,7 +15,7 @@
 [View part of the project online:](https://exclusive-platform-react-ts.vercel.app/#/home)
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run
 
 ### `npm start`
 
