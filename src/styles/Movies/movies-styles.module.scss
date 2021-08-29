@@ -1,0 +1,139 @@
+
+@import './../globalMixin.scss';
+
+$backGround : #000;
+
+
+.wrapperMovie{
+ @include setWrapper();
+ background-color: $backGround;
+
+}
+.imageTopSlider{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  // height: 800px;
+    
+}
+.wrapper_slider{
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.toolbar{
+    padding: 25px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+
+
+
+.slider__line{
+    display: flex;
+    position: relative;
+    transition: 1s ease ;
+    left: 0;
+    .imageTopSlider{
+        width: 100%;
+        height: auto;
+       
+        position: relative;
+            img{
+                background-repeat: no-repeat;
+                background-position: center;
+                object-fit: cover;
+            }
+    }
+}
+.about_film_slider{
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+color: #fff;
+background-color: rgba($color: #000000, $alpha: .4);
+}
+
+.about_film_slider{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 30px 0;
+    justify-content: center;
+        div{
+            padding-left: 30px;
+        }
+}
+.name_film{
+    position: absolute;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    padding: 40px 0;
+    top: 74.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-transform: uppercase;
+    color: #ff0000;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.controllersSlider{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+   
+            .leftArrow{
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                transition: ease .2s all;
+                    &:hover{
+                        cursor: pointer;
+                        transform: scale(1.2);
+                    }
+            }
+            .rightArrow{
+                position: absolute;
+                top : 50%;
+                left: 96%;
+                transition: ease .3s all;
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(1.2);
+                }
+            }
+}
+
+
+.listMovie{
+    background-color: $backGround;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    padding:15px 0;
+    grid-gap:30px;
+                img{
+                    max-width: 342px;
+                }       
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 250px 0;
+}

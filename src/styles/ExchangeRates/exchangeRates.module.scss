@@ -1,0 +1,14 @@
+@import "./../globalMixin.scss";
+
+.wrapper_rates{
+    @include setWrapper();
+    background-color: #fff;
+    min-height: 100vh;
+    text-align: center;
+}
+.wrapper_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}

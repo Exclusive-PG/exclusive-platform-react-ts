@@ -1,0 +1,126 @@
+
+
+.item__2_,.item__19_,.item__18_{
+
+        div{
+            font-size: 20px !important;
+        }
+        img{
+            min-width: 100%;
+        }
+}
+
+.item__14_{
+    img{
+        min-width: 100%;
+    }
+    div{
+        font-size: 30px !important;
+    }
+}
+
+
+
+
+.item__19_{
+    grid-column: 2/4;
+    grid-row: 4/6;
+
+}
+.item__14_{
+    grid-column: 1/4;
+    grid-row: 8/8;
+  
+}
+
+.item__18_{grid-column: 2/3;}
+
+.item__2_{
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+
+
+.pagination{
+    display: flex;
+   // justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+   // flex-wrap: wrap;
+        // .item_list_movie_block{
+        //     padding: 0 15px;
+        //     color: #fff;
+        //             span{
+        //                 border: 1px solid #fff;
+                        
+        //             }
+        // }
+}
+
+.logo_not_found{
+    max-width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search___field_movie{
+    padding:30px 0;
+}
+
+.items{
+    position: relative;
+    overflow: hidden;
+      
+}
+.data_film_list{
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition:  .5s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+            div{
+                padding: 5px 31px;
+                color: #ff0000;
+                text-transform: uppercase;
+                z-index: 5;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+           &:hover{
+                cursor: pointer;
+                opacity: 1;
+           }
+}
+
+
+
+
+
+.data_film_list::before {
+    content: " ";
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba($color: #000000, $alpha: .6);
+    width: 100%;
+    height: 0%;
+    transition: .5s all;
+}
+
+.data_film_list:hover:before{
+    height: 100%;
+}
