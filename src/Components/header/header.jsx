@@ -74,10 +74,13 @@ useEffect(()=>{
         <div className="data-user">
         <div className="section_text_data_user">
         <div className="nickname_user">{googleLogin.userName}</div>
+
+{googleLogin.userName !== STATIC_USERNAME_GOOGLE&&
         <div className="section_status">
         <div className="status_user">Online</div>
         <div className="icon_status"></div>
         </div>
+        }   
         </div>
         
         <div >{googleLogin.urlImage ? <Avatar alt={googleLogin.userName} src= {googleLogin.urlImage} style ={{marginRight:10 , width:80,height:80}} /> : <Person style = {{fontSize : 40,color:"primary"}}/> }</div>
