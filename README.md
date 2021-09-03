@@ -11,7 +11,7 @@
 
 
 `If you want to see all the features of the project , just download it.`\
-[View part of the project online](https://exclusive-platform-react-ts.vercel.app/#/home)
+[View part of the project online](https://exclusive-platform-react-ts-f59ygsgmn-exclusive-pg.vercel.app)
 ## Available Scripts
 
 In the project directory, you can run
