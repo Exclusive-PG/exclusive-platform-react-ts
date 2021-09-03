@@ -36,6 +36,7 @@ const Header = ({googleLogin,GoogleAC}) =>{
 const responseGoogle =(response )   =>{
 
    // console.log(response.getBasicProfile().getEmail());
+     console.log(response)
     const {name , imageUrl} = response.profileObj;
 
 /////  dispatch data Google Login ///
