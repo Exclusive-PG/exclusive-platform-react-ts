@@ -23,7 +23,7 @@ const Movies = () => {
 
 const [movieList,setMovieList] = useState([]);
 
-// const [language,setLanguage ]  = useState<string>("ru");
+ const [language,setLanguage ]  = useState("en");
 
 const [currentPage , setCurrentPage] = useState(1);
 
@@ -41,7 +41,7 @@ let Pagination   = [];
 
 const getTopMovieList = () =>{
   console.log(search);
-  axios.get(search === "" ? ` https://api.themoviedb.org/3/movie/popular?api_key=${API_MOVIES}&language=ru-RU&page=${currentPage} ` :
+  axios.get(search === "" ? ` https://api.themoviedb.org/3/movie/popular?api_key=${API_MOVIES}&language=${language}&page=${currentPage} ` :
   `https://api.themoviedb.org/3/search/movie?api_key=${API_MOVIES}&language=ru-RU&query=${search}&page=${currentPage}&include_adult=false`
    )
   .then((response)=>{
@@ -123,7 +123,7 @@ CreatorPagination(totalPages)
                                         <div>{item.title}</div>
                                             <div>{item.release_date === undefined ? item.release_date :  item.release_date.replace(/-/g," ").split(" ").reverse().join(" / ")}</div>
                                               <div style = {{display:"flex",alignItems:"center",justifyContent:"center"}}><FavoriteBorderIcon color = "secondary" style = {{paddingRight:"5px"}}/>{item.vote_average}</div>
-                                             <div> <Link  style = {{textDecoration :"none"}} to ={ `/TopMovies/film/${item.id}`} ><Button onClick = {()=>setViewFilm(item.id.toString())} variant="contained" color="secondary">Подробнее</Button> </Link> </div>
+                                             <div> <Link  style = {{textDecoration :"none"}} to ={ `/TopMovies/film/${item.id}`} ><Button onClick = {()=>setViewFilm(item.id.toString())} variant="contained" color="secondary">Detail</Button> </Link> </div>
                                               
                                       </div>
                                       <div className = "background_hover"></div>

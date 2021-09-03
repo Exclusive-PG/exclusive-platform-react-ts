@@ -2,7 +2,7 @@
 
 .wrapper_rates{
     @include setWrapper();
-    background-color: #fff;
+    background-color: rgba($color: #fff, $alpha: .7);
     min-height: 100vh;
     text-align: center;
 }
@@ -11,4 +11,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+.wrapper_counting{
+    color: #5F666C;
+    padding: 50px 0;
+    font-size: 24px;
+}
+.main_title_total{
+    padding-bottom:20px;
 }

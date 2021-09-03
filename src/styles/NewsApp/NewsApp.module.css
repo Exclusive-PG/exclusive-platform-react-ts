@@ -119,5 +119,14 @@ border-radius: 10px;
    
   }
 
+  .errorPlace{
+      text-align: center;
+      font-size: 18px;
+      margin: 0 auto;
+      max-width: 500px;
+      color: #fff;
+
+  }
+
   /* #D6004C
   #3F51B5 */

@@ -10,12 +10,18 @@ import Movies from "./Components/MovieDB/Movies";
 import ExchangeRates from "./Components/Exchange_rates/exchangeRates"
 import NewsApp from "./Components/NewsApp/NewsApp";
 import RadioApp from "./Components/Radio/Radio";
+import { AppState } from "./Redux/store";
+import { useSelector } from "react-redux";
+
 // import MovieBuild from "./Components/MovieDB/MovieBuild";
 
 
 
 
 const App: React.FC = () => {
+
+
+
 
   return (
     <>
@@ -31,6 +37,7 @@ const App: React.FC = () => {
        <Route path = "/ExchangeRates" render ={()=> <ExchangeRates/> }></Route>
        <Route path = "/News" render={()=><NewsApp/>}></Route>
        <Route path = "/Radio" render={()=><RadioApp/>}></Route>
+
       </>
   );
 };

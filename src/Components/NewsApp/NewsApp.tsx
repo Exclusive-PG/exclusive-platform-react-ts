@@ -51,6 +51,8 @@ const NewsApp:React.FC = () =>{
    
     let ref = useRef<HTMLInputElement>();
 
+    const [error,setError] = useState<string>("");
+
    // useEffect(()=>GetNews(),[])  
 
     useEffect(()=>GetNews(),[currentPage])
@@ -77,7 +79,7 @@ const NewsApp:React.FC = () =>{
     const GetNews = () =>{
 
     setLoading(false)
-    //https://newsapi.org/v2/everything?q=bitcoin&apiKey=e5dea616fd414320a8b664c885432108
+
     
     axios.get(`https://newsapi.org/v2/everything?q=${keyWord}&apiKey=${API_NEWS}&language=en&page=${currentPage}`).then((response: any)=>{
         console.log(response)
@@ -85,6 +87,7 @@ const NewsApp:React.FC = () =>{
     setLoading(true)
     }).catch((err:Error)=>{
         console.log(err);
+        setError(`Service doesn't work.You can download this project on link `)
     })
 
     }
@@ -147,7 +150,13 @@ const NewsApp:React.FC = () =>{
         </div>
         </section>
         </div>:
-                <div className = {s.center_loading}><CircularProgress key = {Math.random()} color="primary" /></div>
+                <div className = {s.center_loading}>
+          
+                  {error !== "" ? <div className ={s.errorPlace}>{error} <a href="https://github.com/Exclusive-PG/exclusive-platform-react-ts"><a>https://github.com/Exclusive-PG/exclusive-platform-react-ts</a></a></div>
+                  :         <CircularProgress key = {Math.random()} className ={s.circleLoad} color="primary" />
+                  }
+                  
+                  </div>
             }
         </main>
     );
@@ -157,15 +166,3 @@ export default NewsApp;
 
 
 
-
-// <div className = {s.elem_grid} key = {index} >
-                // <div><a href={item.url}><img className={s.img_news} src={item.urlToImage} /></a></div>
-                // <div className ={s.data_news}>
-                // <div className={s.title}><a href={item.url}>{item.title}</a></div>
-                // <div className={s.data_time_author}>
-                //     <div className=""><i className="far fa-clock"></i>  {item.publishedAt.replace(/[a-z]/gi," ")}</div>
-                //     <div className=""><i className="far fa-user"></i> {item.author}</div>
-                //     </div>
-                // </div>
-                //  </div>
-                // 

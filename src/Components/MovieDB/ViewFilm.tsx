@@ -69,7 +69,7 @@ const Viewfilm: React.FC<Props> = (props) => {
         </div>
 
         <div className="description_view_film">
-          <div className="description__">Описание</div>
+          <div className="description__">Description</div>
           <span>{props.overview !== "" ?  props.overview : "Описания отсутствует"}</span>
           </div>
       </div>

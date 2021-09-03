@@ -148,9 +148,7 @@ useEffect(()=>{
 
 <AppBar position="static"  style = {{display:"block"}}>
   <Toolbar className = "todo_wrapper">
-    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-      <MenuIcon />
-    </IconButton>
+ 
 
     <Typography variant="h6" className={classes.title}>
       To Do List
@@ -179,7 +177,7 @@ useEffect(()=>{
       </div>
 
       
-      <div className={classes.search}>
+      {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -191,7 +189,7 @@ useEffect(()=>{
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div>
+          </div> */}
 
 
           <IconButton
@@ -211,7 +209,7 @@ useEffect(()=>{
 
 <section className="form_section" >
            <TextField
-          label="Enter new toDo"
+          label="Enter new to do"
           type="text"
           autoComplete="current-text"
           variant="filled"

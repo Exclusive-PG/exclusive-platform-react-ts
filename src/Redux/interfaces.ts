@@ -1,5 +1,4 @@
-import { OverridableComponent } from "@material-ui/core/OverridableComponent";
-import { SvgIconTypeMap } from "@material-ui/core";
+
 import {
   GOOGLE_LOGIN_DATA,
   COMPLETE_TODO_ITEM,
@@ -59,15 +58,10 @@ export interface StateToDo {
   inputTodo: string;
 }
 
-// export interface completedTodoAC {
-//   id: string
-//   //completed : boolean
-// }
-
 export interface ActionCompletedTodo {
   type: typeof COMPLETE_TODO_ITEM;
   id: string;
-  // completed : boolean
+
 }
 
 export interface ActionAddTodo {
@@ -146,15 +140,6 @@ export interface IMovies {
 
 ////////////TYPE EXCHANGE RATES /////////////
 
-// base_code: "UAH"
-// conversion_rates: {UAH: 1, AED: 0.1305, AFN: 2.7665, ALL: 3.6261, AMD: 18.44, …}
-// documentation: "https://www.exchangerate-api.com/docs"
-// result: "success"
-// terms_of_use: "https://www.exchangerate-api.com/terms"
-// time_last_update_unix: 1611100801
-// time_last_update_utc: "Wed, 20 Jan 2021 00:00:01 +0000"
-// time_next_update_unix: 1611187216
-// time_next_update_utc: "Thu, 21 Jan 2021 00:00:16 +0000"
 
 export interface IExchangeRates {
   base_code :string;
@@ -181,3 +166,4 @@ export interface IRadioStations{
  data :Array<RadioStation> 
  playNow : RadioStation
 }
+

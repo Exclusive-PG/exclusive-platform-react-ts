@@ -15,15 +15,13 @@ import TextZone from "./TextZone";
 const audio : HTMLAudioElement = new Audio();
 
 
-//let srcRadio:string = ""; 
+
     
 
 
 const tooglePlay = (src:string,data:RadioStation) : void =>{
 
     if(audio.src !== src)  {
-       // audio.pause()
-       // srcRadio = src;
         audio.src = src;
         audio.play();
     
@@ -50,6 +48,8 @@ const RadioApp:React.FC = () => {
 
     const dispatch = useDispatch();
 
+    const [error,setError] = useState<string>("");
+
     const changePlayNow = (data:RadioStation) : void =>{
         dispatch(playNowAC(data))
     }
@@ -68,17 +68,31 @@ const ToogleVolume = () : void => {
 
 
     const stopOrPauseAudio  = () : Promise<void>|void => {
+
         if(playNow.stream === "") return;
         
-        
+      try{  
         if(audio.paused){
-            audio.play();
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+    
+               }).catch((error) =>{
+       
+                setError(`Service doesn't work.You can download this project on link `)
+                console.log("error")
+              });
+              }
             setStatusPlaying(!statusPlaying)
         }
         else{
             audio.pause();
             setStatusPlaying(!statusPlaying)
         }
+    }
+    catch(e){
+        setError(`Service doesn't work.You can download this project on link `)
+    }
     }
     return(
         <main className ={s.wrapper_radio}>
@@ -107,7 +121,7 @@ const ToogleVolume = () : void => {
 }
     </div>
     </section>
-
+        {error !== "" && <div className ={s.errorPlace}>{error}  <a href="https://github.com/Exclusive-PG/exclusive-platform-react-ts"> <a>https://github.com/Exclusive-PG/exclusive-platform-react-ts</a></a></div>}
         {/* <Prompt message = {audio.pause}/> */}
         </main>
 

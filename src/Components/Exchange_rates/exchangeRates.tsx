@@ -58,7 +58,7 @@ console.log(isNaN(parseFloat(valueTo)))
     <main> 
       <section>
         <div className={s.wrapper_rates}>
-          <h1>exchange Rates</h1>
+          <h1 style = {{paddingTop:"50px",color:"#5F666C"}}>Exchange Rates</h1>
 
           {rates !== undefined && (
             <>
@@ -71,6 +71,7 @@ console.log(isNaN(parseFloat(valueTo)))
                     value = {fieldRates}
                     variant="outlined"
                     // defaultValue={(1).toFixed(2)}
+                    placeholder = "Input currency"
                     id="input_current_rates"
                     onChange = {changeInputRates}
                     InputProps={{
@@ -83,6 +84,7 @@ console.log(isNaN(parseFloat(valueTo)))
                      label={`From`}
                     variant="outlined"
                     id="from_rates"
+                    placeholder = "Input currency"
                     value = {fieldFromTransfer}
                      onChange = {changeInputFromTransfer}
                     InputProps={{
@@ -94,6 +96,7 @@ console.log(isNaN(parseFloat(valueTo)))
                     className={classes.margin}
                      label={`To`}
                     variant="outlined"
+                    placeholder = "Input currency"
                     id="to_rates"
                     value = {fieldToTransfer}
                      onChange = {changeInputToTransfer}
@@ -108,13 +111,14 @@ console.log(isNaN(parseFloat(valueTo)))
                 <section>
 
 
-                      <div className="wrapper_counting">
+                      <div className={s.wrapper_counting}>
+                        <div className ={s.main_title_total}>Total:</div>
                         {/* <div>{   `1 ${rates.base_code} = ${valueFrom} ` }</div> */}
                         {
-                          (isNaN(parseFloat(fieldRates) * parseFloat(valueTo.split(" ")[0])) === false && valueTo.split(" ")[1] !== undefined ) ? `${fieldRates} ${rates.base_code} = ${fieldRates} * ${valueTo.split(" ")[0]} = ${parseFloat(fieldRates) * parseFloat(valueTo.split(" ")[0])} ${valueTo.split(" ")[1]} ` 
-                          : "" 
+                          (isNaN(parseFloat(fieldRates) * parseFloat(valueTo.split(" ")[0])) === false && valueTo.split(" ")[1] !== undefined ) ? `${fieldRates} ${rates.base_code} = ${parseInt(fieldRates).toFixed(2)} * ${parseInt(valueTo.split(" ")[0]).toFixed(2)} = ${(parseFloat(fieldRates) * parseFloat(valueTo.split(" ")[0])).toFixed(2)} ${valueTo.split(" ")[1]} ` 
+                          : "Please enter data from and to" 
                         
-                        
+                        //TOTAL = 1000 AFN = 1000 * 1.2567 = 1256.6999999999998 ALL
                         }
 
                         

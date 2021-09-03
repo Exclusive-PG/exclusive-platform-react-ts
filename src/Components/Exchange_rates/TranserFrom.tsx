@@ -88,6 +88,7 @@ if(rates === "") return;
         <NativeSelect
           id="demo-customized-select-native"
           value={rates}
+   
           onChange={handleChange}
           onClick = {getCurrenttValueFrom}  
           input={<BootstrapInput />}

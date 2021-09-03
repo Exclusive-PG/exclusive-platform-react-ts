@@ -68,7 +68,7 @@ useEffect(()=>{
         <header className = "main__screen_header">
 
         <div className="left_block">
-    {/* <>{googleLogin.userName === STATIC_USERNAME_GOOGLE && <GoogleLogin clientId = {ClientID} onSuccess= {responseGoogle} onFailure = {responseGoogle} /> }</> */}
+    <>{googleLogin.userName === STATIC_USERNAME_GOOGLE && <GoogleLogin clientId = {ClientID} onSuccess= {responseGoogle} onFailure = {responseGoogle} /> }</>
         
         
         <div className="data-user">
@@ -89,7 +89,7 @@ useEffect(()=>{
 
         <div className="right_block">
         <div className="date_now_user">{date}</div>
-        <div className="microphone_search"><Mic style = {{fontSize : 30,color:"primary"}} /></div>
+
         </div>
         </header>
     );

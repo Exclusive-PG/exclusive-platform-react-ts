@@ -4,8 +4,7 @@
 }
 body {
   margin: 0;
-  /*-webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;*/
+
   padding: 0;
   
 }
@@ -15,7 +14,7 @@ code {
     monospace;
 }
 html{
-  background-image: url("./images/main_image_variant_2.jpg");
+  background-image: url("./images/fone.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

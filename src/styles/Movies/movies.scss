@@ -56,7 +56,22 @@
                         
         //             }
         // }
+        &:hover{
+            cursor: pointer;
+        }
 }
+.pagination::-webkit-scrollbar {
+    width: 50px
+  }
+  .pagination::-webkit-scrollbar-track {
+    background: #D6004C;
+    border-radius: 10px;
+  }
+  .pagination::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+   
+  }
 
 .logo_not_found{
     max-width: 100% !important;

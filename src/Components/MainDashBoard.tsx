@@ -23,7 +23,6 @@ debugger
                         color : dash.styleDashBoard.color
                         }}> 
                               <div className={s.main_name_section}><i className={dash.url}></i></div>
-                              {/* <div><i className={dash.url}></i></div> */}
                               </Link>  
                          : 
                          <Link to = {`/${dash.name.split(' ').join('')}`} title = {dash.name} className={s.section} key = {dash.id} 
@@ -31,7 +30,7 @@ debugger
                                    color : dash.styleDashBoard.color
                          }}>
                               <div className={s.name_section}><i className={dash.url}></i></div>
-                              {/* <div><i className={dash.url}></i></div> */}
+
                           </Link>  
                         
                     ))
