@@ -49,7 +49,7 @@ const getTopMovieList = () =>{
       const {data} = response;
       
       setMovieList(data.results);
-      setTotalPages(data.total_pages);
+      setTotalPages(500);
     setTimeout(() =>   setLoading(true), 1000);
   })
   .catch((error)=> console.log(error.message));
